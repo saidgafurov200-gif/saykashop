@@ -7,8 +7,8 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23090a0f'/><text x='50%' y='55%' dominant-baseline='central' text-anchor='middle' fill='%2300f2fe' font-family='Arial, sans-serif' font-weight='900' font-size='65'>S</text></svg>">
   <style>
     :root {
-      --bg: #05070a;
-      --card-bg: rgba(15, 22, 36, 0.75);
+      --bg: #030508;
+      --card-bg: rgba(13, 19, 33, 0.85);
       --accent-blue: #00f2fe;
       --accent-cyan: #4facfe;
       --accent-purple: #7b2cbf;
@@ -20,7 +20,6 @@
       --discord: #5865F2;
       --active-color: #22c55e;
       --inactive-color: #ef4444;
-      --urgent-color: #f97316;
       --sale-color: #eab308;
     }
 
@@ -35,9 +34,11 @@
     body {
       background-color: var(--bg);
       background-image: 
-        radial-gradient(circle at 50% -10%, rgba(0, 242, 254, 0.18), transparent 50%),
-        radial-gradient(circle at 100% 60%, rgba(123, 44, 191, 0.12), transparent 40%),
-        radial-gradient(circle at 0% 100%, rgba(79, 172, 254, 0.08), transparent 40%);
+        linear-gradient(to bottom, rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.92)),
+        url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
       color: var(--text);
       display: flex;
       flex-direction: column;
@@ -56,7 +57,7 @@
 
     .lang-switch {
       display: flex;
-      background: rgba(255, 255, 255, 0.03);
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid var(--border);
       border-radius: 20px;
       padding: 3px;
@@ -83,7 +84,7 @@
 
     header {
       text-align: center;
-      margin-bottom: 30px;
+      margin-bottom: 25px;
       width: 100%;
     }
 
@@ -94,7 +95,7 @@
       background: linear-gradient(135deg, #ffffff 0%, #00f2fe 50%, #9d4edd 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      text-shadow: 0 0 35px rgba(0, 242, 254, 0.25);
+      text-shadow: 0 0 35px rgba(0, 242, 254, 0.3);
       text-transform: uppercase;
       user-select: none;
     }
@@ -106,19 +107,56 @@
       padding: 0 10px;
     }
 
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+      width: 100%;
+      max-width: 1000px;
+      margin-bottom: 25px;
+    }
+
+    .stat-card {
+      background: rgba(15, 22, 36, 0.7);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      border-radius: 18px;
+      padding: 16px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-card:hover {
+      border-color: rgba(0, 242, 254, 0.3);
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.15);
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--accent-blue);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+
     .tabs {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 8px;
-      margin-bottom: 30px;
-      background: rgba(255, 255, 255, 0.02);
+      margin-bottom: 25px;
+      background: rgba(255, 255, 255, 0.03);
       padding: 6px;
       border-radius: 25px;
       border: 1px solid var(--border);
       width: 100%;
       max-width: 800px;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
 
     .tab-btn {
@@ -163,12 +201,12 @@
       flex-direction: column;
       justify-content: space-between;
       transition: all 0.3s ease;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
 
     .price-card:hover {
       border-color: var(--border-hover);
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 20px var(--accent-glow);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px var(--accent-glow);
     }
 
     .price-card h3 {
@@ -185,16 +223,14 @@
       align-items: center;
       padding: 14px;
       border: 1px solid rgba(255, 255, 255, 0.03);
-      background: rgba(255, 255, 255, 0.015);
+      background: rgba(255, 255, 255, 0.02);
       border-radius: 14px;
       margin-bottom: 8px;
       cursor: pointer;
       transition: all 0.2s ease;
     }
 
-    .price-item:last-child {
-      margin-bottom: 0;
-    }
+    .price-item:last-child { margin-bottom: 0; }
 
     .price-item:hover {
       background: rgba(0, 242, 254, 0.08);
@@ -246,22 +282,14 @@
     }
 
     .item-status.active { color: var(--active-color); }
-    .item-status.inactive { color: var(--inactive-color); }
 
     .status-dot {
       width: 6px;
       height: 6px;
       border-radius: 50%;
       display: inline-block;
-    }
-
-    .item-status.active .status-dot {
       background-color: var(--active-color);
       box-shadow: 0 0 6px var(--active-color);
-    }
-
-    .item-status.inactive .status-dot {
-      background-color: var(--inactive-color);
     }
 
     .price-block {
@@ -282,36 +310,90 @@
       font-size: 1.1rem;
     }
 
+    .reviews-section {
+      width: 100%;
+      max-width: 1000px;
+      margin-top: 10px;
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 800;
+      margin-bottom: 15px;
+      color: #fff;
+      text-align: center;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 15px;
+    }
+
+    .review-card {
+      background: rgba(15, 22, 36, 0.75);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      backdrop-filter: blur(10px);
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+
+    .review-user {
+      font-weight: 700;
+      color: #fff;
+      font-size: 0.9rem;
+    }
+
+    .review-stars {
+      color: #eab308;
+      font-size: 0.8rem;
+    }
+
+    .review-text {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+      line-height: 1.4;
+    }
+
     .action-buttons {
       display: flex;
+      flex-direction: column;
       gap: 10px;
-      margin-top: 20px;
+      margin-top: 15px;
     }
 
     .btn-contact {
-      flex: 1;
-      padding: 12px 8px;
+      width: 100%;
+      padding: 14px;
       text-align: center;
       border-radius: 14px;
       text-decoration: none;
-      font-weight: 700;
-      font-size: 0.88rem;
+      font-weight: 800;
+      font-size: 0.95rem;
       transition: all 0.2s ease;
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+      border: none;
     }
 
-    .btn-discord {
-      background: rgba(88, 101, 242, 0.12);
-      color: #7983f5;
-      border: 1px solid rgba(88, 101, 242, 0.3);
+    .btn-pay {
+      background: linear-gradient(135deg, #00f2fe, #4facfe);
+      color: #000;
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
     }
 
-    .btn-discord:hover, .btn-discord:active {
-      background: var(--discord);
-      color: #fff;
-      box-shadow: 0 0 15px rgba(88, 101, 242, 0.4);
+    .btn-pay:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.5);
     }
 
     .btn-insta {
@@ -320,148 +402,65 @@
       border: 1px solid rgba(225, 48, 108, 0.3);
     }
 
-    .btn-insta:hover, .btn-insta:active {
-      background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-      color: #fff;
-      box-shadow: 0 0 15px rgba(225, 48, 108, 0.4);
-    }
+    .platform-block { display: none; }
+    .platform-block.active { display: block; }
 
-    .platform-block {
-      display: none;
-    }
-
-    .platform-block.active {
-      display: block;
-    }
-
-    /* Модальное окно (Оверлей + Карточка слота) */
     .modal-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(5, 7, 10, 0.85);
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(3, 5, 8, 0.88);
       backdrop-filter: blur(12px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      padding: 20px;
+      display: flex; align-items: center; justify-content: center;
+      z-index: 1000; opacity: 0; pointer-events: none;
+      transition: opacity 0.3s ease; padding: 20px;
     }
 
-    .modal-overlay.active {
-      opacity: 1;
-      pointer-events: all;
-    }
+    .modal-overlay.active { opacity: 1; pointer-events: all; }
 
     .modal-card {
       background: rgba(18, 26, 43, 0.95);
       border: 1px solid var(--border-hover);
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px var(--accent-glow);
-      border-radius: 24px;
-      padding: 30px;
-      width: 100%;
-      max-width: 450px;
-      position: relative;
-      transform: scale(0.9);
-      transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border-radius: 24px; padding: 25px;
+      width: 100%; max-width: 450px; position: relative;
+      transform: scale(0.9); transition: transform 0.3s ease;
     }
 
-    .modal-overlay.active .modal-card {
-      transform: scale(1);
-    }
+    .modal-overlay.active .modal-card { transform: scale(1); }
 
     .close-btn {
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border);
-      color: var(--text-dim);
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 1.1rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.2s ease;
+      position: absolute; top: 18px; right: 18px;
+      background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border);
+      color: var(--text-dim); width: 32px; height: 32px; border-radius: 50%;
+      cursor: pointer; font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
     }
 
-    .close-btn:hover {
-      background: rgba(255, 255, 255, 0.15);
-      color: #fff;
-    }
-
-    .modal-header {
-      margin-bottom: 20px;
-    }
-
-    .modal-title {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 5px;
-    }
-
-    .modal-price-row {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-      margin-top: 10px;
-    }
-
-    .modal-price {
-      font-size: 1.8rem;
-      font-weight: 900;
-      color: var(--accent-blue);
-    }
-
-    .modal-old-price {
-      font-size: 1rem;
-      color: var(--text-dim);
-      text-decoration: line-through;
-    }
-
+    .modal-price-row { display: flex; align-items: baseline; gap: 10px; margin-top: 8px; }
+    .modal-price { font-size: 1.8rem; font-weight: 900; color: var(--accent-blue); }
     .modal-desc {
-      font-size: 0.95rem;
-      color: var(--text-dim);
-      line-height: 1.6;
-      margin-bottom: 25px;
-      background: rgba(255, 255, 255, 0.02);
-      padding: 15px;
-      border-radius: 14px;
-      border: 1px solid rgba(255, 255, 255, 0.04);
+      font-size: 0.9rem; color: var(--text-dim); line-height: 1.5;
+      margin: 15px 0 20px; background: rgba(255, 255, 255, 0.02);
+      padding: 12px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.04);
     }
 
-    .modal-contact-label {
-      font-size: 0.85rem;
-      font-weight: 700;
-      color: var(--text);
+    .wallet-box {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(0, 242, 254, 0.2);
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 0.75rem;
+      word-break: break-all;
+      color: #00f2fe;
       margin-bottom: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    footer {
-      margin-top: auto;
-      padding: 25px 0 10px;
-      color: var(--text-dim);
-      font-size: 0.85rem;
       text-align: center;
     }
 
+    footer { margin-top: auto; padding: 25px 0 10px; color: var(--text-dim); font-size: 0.85rem; text-align: center; }
+
     @media (max-width: 480px) {
       body { padding: 12px 10px; }
-      .tabs { border-radius: 18px; }
-      .tab-btn { flex: 1 1 40%; padding: 8px 10px; font-size: 0.8rem; }
       .price-card { padding: 18px; }
-      .modal-card { padding: 22px; }
+      .modal-card { padding: 20px; }
     }
   </style>
 </head>
@@ -479,37 +478,80 @@
     <p id="subtitle">Цифровые товары, Telegram & Обмен Криптовалют</p>
   </header>
 
+  <div class="stats-container">
+    <div class="stat-card">
+      <div class="stat-value">90 - 120</div>
+      <div class="stat-label">👥 Посещаемость в день</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">2 - 5</div>
+      <div class="stat-label">🛒 Покупок в день</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-value">1 400+</div>
+      <div class="stat-label">⭐ Отзывов за все время</div>
+    </div>
+  </div>
+
   <div class="tabs">
     <button class="tab-btn active" onclick="switchTab(event, 'telegram')">Telegram</button>
-    <button class="tab-btn" onclick="switchTab(event, 'crypto')">Крипта</button>
     <button class="tab-btn" onclick="switchTab(event, 'instagram')">Instagram</button>
     <button class="tab-btn" onclick="switchTab(event, 'tiktok')">TikTok</button>
+    <button class="tab-btn" onclick="switchTab(event, 'crypto')">Крипта</button>
   </div>
 
   <div class="container">
     <div id="telegram" class="platform-block active"><div class="price-grid" id="grid-telegram"></div></div>
-    <div id="crypto" class="platform-block"><div class="price-grid" id="grid-crypto"></div></div>
     <div id="instagram" class="platform-block"><div class="price-grid" id="grid-instagram"></div></div>
     <div id="tiktok" class="platform-block"><div class="price-grid" id="grid-tiktok"></div></div>
+    <div id="crypto" class="platform-block"><div class="price-grid" id="grid-crypto"></div></div>
   </div>
 
-  <!-- Всплывающий экран при клике -->
+  <div class="reviews-section">
+    <div class="section-title">💬 Отзывы покупателей</div>
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-header">
+          <span class="review-user">Алексей М.</span>
+          <span class="review-stars">★★★★★</span>
+        </div>
+        <div class="review-text">«Брал 500 Stars для Telegram. Пришли буквально за 2 минуты! Отличный сервис, спасибо SGProducts.»</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <span class="review-user">Дамир К.</span>
+          <span class="review-stars">★★★★★</span>
+        </div>
+        <div class="review-text">«Накрутил 10к просмотров в ТТ. Ролик вылетел в реки через пару часов!»</div>
+      </div>
+      <div class="review-card">
+        <div class="review-header">
+          <span class="review-user">Елена С.</span>
+          <span class="review-stars">★★★★★</span>
+        </div>
+        <div class="review-text">«Оплатила Telegram Premium на год. Гифт пришел моментально!»</div>
+      </div>
+    </div>
+  </div>
+
   <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
     <div class="modal-card" onclick="event.stopPropagation()">
       <button class="close-btn" onclick="closeModal()">✕</button>
       <div class="modal-header">
-        <div class="modal-title" id="m-title">Название услуги</div>
+        <div style="font-size:1.4rem; font-weight:800; color:#fff;" id="m-title">Название услуги</div>
         <div class="modal-price-row">
           <span class="modal-price" id="m-price">$0.00</span>
-          <span class="modal-old-price" id="m-old-price"></span>
+          <span style="font-size:0.9rem; color:var(--text-dim); text-decoration:line-through;" id="m-old-price"></span>
         </div>
       </div>
-      <div class="modal-desc" id="m-desc">Описание услуги загружается...</div>
+      <div class="modal-desc" id="m-desc">Описание услуги...</div>
       
-      <div class="modal-contact-label" id="m-contact-title">Связаться для покупки:</div>
+      <div style="font-size:0.8rem; color:var(--text-dim); margin-bottom:6px;">Адрес для оплаты (TON / Wallet):</div>
+      <div class="wallet-box">UQAfEupLJIiJrGznFhoWYT3NSqGeMDa97euLeKUm9MqRBsFP</div>
+
       <div class="action-buttons">
-        <a href="https://discord.gg/твой_сервер" target="_blank" class="btn-contact btn-discord">Discord</a>
-        <a href="https://www.instagram.com/gafurov12478/" target="_blank" class="btn-contact btn-insta">Instagram</a>
+        <button class="btn-contact btn-pay" onclick="processPayment()">⚡ Оплатить в Кошелек</button>
+        <a href="https://www.instagram.com/gafurov12478/" target="_blank" class="btn-contact btn-insta">Написать Менеджеру</a>
       </div>
     </div>
   </div>
@@ -519,33 +561,26 @@
   </footer>
 
   <script>
+    const MY_TON_WALLET = "UQAfEupLJIiJrGznFhoWYT3NSqGeMDa97euLeKUm9MqRBsFP";
+
     const SERVICES_DATA = {
       telegram: [
         {
           key: "tgStars",
           items: [
-            { count: "100 Stars ⭐", price: "$2.09", oldPrice: "", active: true, desc: "Официальное пополнение Telegram Stars. Подходит для подарков, платных подписок и ботов. Моментальная передача." },
-            { count: "250 Stars ⭐", price: "$4.39", oldPrice: "", active: true, desc: "Быстрое зачисление звезд на ваш аккаунт или по юзернейму без входа в аккаунт." },
-            { count: "500 Stars ⭐", price: "$8.59", oldPrice: "$8.99", active: true, desc: "Выгодный пак Telegram Stars с приятной скидкой. Идеально для контент-мейкеров." },
-            { count: "1 000 Stars ⭐", price: "$16.99", oldPrice: "$17.99", active: true, desc: "Максимальный набор звезд для крупных покупок, подписок и донатов в каналах." }
+            { count: "100 Stars ⭐", price: "$2.09", oldPrice: "", active: true, desc: "Официальное пополнение Telegram Stars. Моментальная доставка." },
+            { count: "250 Stars ⭐", price: "$4.39", oldPrice: "", active: true, desc: "Быстрое зачисление звезд на ваш аккаунт по юзернейму." },
+            { count: "500 Stars ⭐", price: "$8.59", oldPrice: "$8.99", active: true, desc: "Выгодный пак Telegram Stars со скидкой." },
+            { count: "1 000 Stars ⭐", price: "$16.99", oldPrice: "$17.99", active: true, desc: "Максимальный набор звезд для покупок и подарков." }
           ]
         },
         {
           key: "tgPremium",
           items: [
-            { count: "1 Месяц Premium", price: "$3.49", oldPrice: "", active: true, desc: "Подписка Telegram Premium на 1 месяц. Выдается гифтом (подарком) без входа в аккаунт." },
-            { count: "3 Месяца Premium", price: "$10.99", oldPrice: "", active: true, desc: "Подписка Premium на 3 месяца. Доступ к эксклюзивным стикерам, лимитам и отключению рекламы." },
-            { count: "6 Месяцев Premium", price: "$14.99", oldPrice: "", active: true, desc: "Оптимальный выбор по цене и длительности подписки с выгодой." },
-            { count: "12 Месяцев Premium", price: "$26.99", oldPrice: "$29.99", active: true, desc: "Годовая подписка с максимальной экономией средств." }
-          ]
-        }
-      ],
-      crypto: [
-        {
-          key: "cryptoExchange",
-          items: [
-            { count: "USDT ➔ TRC20", price: "+ 2.3% Комиссия", oldPrice: "", active: true, desc: "Быстрый перевод и обмен USDT в сети TRC20. Низкая комиссия 2.3%, исполнение за 2-5 минут." },
-            { count: "USDT ➔ Cashout", price: "+ 3.0% Комиссия", oldPrice: "", active: true, desc: "Вывод USDT в фиат, карты и наличные. Полностью безопасная сделка с гарантией." }
+            { count: "1 Месяц Premium", price: "$3.49", oldPrice: "", active: true, desc: "Подписка Telegram Premium на 1 месяц без входа в аккаунт." },
+            { count: "3 Месяца Premium", price: "$10.99", oldPrice: "", active: true, desc: "Подписка Premium на 3 месяца. Полный доступ." },
+            { count: "6 Месяцев Premium", price: "$14.99", oldPrice: "", active: true, desc: "Оптимальный выбор по цене и длительности." },
+            { count: "12 Месяцев Premium", price: "$26.99", oldPrice: "$29.99", active: true, desc: "Годовая подписка с максимальной экономией." }
           ]
         }
       ],
@@ -553,28 +588,23 @@
         {
           key: "followers",
           items: [
-            { count: "1 000 Подписчиков", price: "$0.99", oldPrice: "", active: true, desc: "Быстрый старт профиля. Подписчики с аватарками для красивой цифры." },
-            { count: "10 000 Подписчиков", price: "$8.09", oldPrice: "$8.99", active: true, desc: "Пакет с скидкой для солидного вида страницы и роста доверия." },
-            { count: "100 000 Подписчиков", price: "$39.99", oldPrice: "", active: false, desc: "Данная услуга временно находится на техническом обслуживании." },
-            { count: "1 000 000 Подписчиков", price: "$99.99", oldPrice: "", active: false, desc: "Данная услуга временно находится на техническом обслуживании." }
+            { count: "1 000 Подписчиков", price: "$0.99", oldPrice: "", active: true, desc: "Быстрый старт профиля." },
+            { count: "10 000 Подписчиков", price: "$8.09", oldPrice: "$8.99", active: true, desc: "Пакет со скидкой для роста страницы." }
           ]
         },
         {
           key: "views",
           items: [
-            { count: "1 000 Просмотров", price: "$0.29", oldPrice: "", active: true, desc: "Просмотры для ваших Reels и клипов." },
-            { count: "10 000 Просмотров", price: "$2.69", oldPrice: "$2.99", active: true, desc: "Вывод видео в алгоритмы рекомендаций." },
-            { count: "100 000 Просмотров", price: "$19.99", oldPrice: "", active: false, desc: "Временно недоступно." },
-            { count: "1 000 000 Просмотров", price: "$59.99", oldPrice: "", active: false, desc: "Временно недоступно." }
+            { count: "1 000 Просмотров", price: "$0.29", oldPrice: "", active: true, desc: "Мгновенные просмотры на Reels и видео." },
+            { count: "10 000 Просмотров", price: "$2.69", oldPrice: "$2.99", active: true, desc: "Пакет просмотров для вывода в рекомендации." },
+            { count: "100 000 Просмотров", price: "$19.99", oldPrice: "", active: true, desc: "Максимальный охват для вашей публикации." }
           ]
         },
         {
           key: "likes",
           items: [
-            { count: "1 000 Лайков", price: "$0.59", oldPrice: "", active: true, desc: "Быстрые лайки для поднятия публикаций." },
-            { count: "10 000 Лайков", price: "$6.29", oldPrice: "$6.99", active: true, desc: "Пакет лайков для регулярных постов." },
-            { count: "100 000 Лайков", price: "$32.99", oldPrice: "", active: false, desc: "Временно недоступно." },
-            { count: "1 000 000 Лайков", price: "$74.99", oldPrice: "", active: false, desc: "Временно недоступно." }
+            { count: "1 000 Лайков", price: "$0.59", oldPrice: "", active: true, desc: "Качественные лайки на посты и Reels." },
+            { count: "10 000 Лайков", price: "$6.29", oldPrice: "$6.99", active: true, desc: "Быстрое поднятие активности под постом." }
           ]
         }
       ],
@@ -582,28 +612,31 @@
         {
           key: "followers",
           items: [
-            { count: "1 000 Подписчиков", price: "$2.29", oldPrice: "", active: true, desc: "Подписчики в TikTok для открывания доступа к прямым эфирам (стримам)." },
-            { count: "10 000 Подписчиков", price: "$13.49", oldPrice: "$14.99", active: true, desc: "Большой пакет фолловеров для продвижения." },
-            { count: "100 000 Подписчиков", price: "$69.99", oldPrice: "", active: false, desc: "Временно недоступно." },
-            { count: "1 000 000 Подписчиков", price: "$139.99", oldPrice: "", active: false, desc: "Временно недоступно." }
+            { count: "1 000 Подписчиков", price: "$2.29", oldPrice: "", active: true, desc: "Фолловеры в TikTok для включения прямых эфиров." }
           ]
         },
         {
           key: "views",
           items: [
-            { count: "1 000 Просмотров", price: "$0.25", oldPrice: "", active: true, desc: "Быстрые просмотры TikTok клипов." },
-            { count: "10 000 Просмотров", price: "$1.79", oldPrice: "$1.99", active: true, desc: "Помогает ролику зацепиться в Рекомендациях." },
-            { count: "100 000 Просмотров", price: "$14.99", oldPrice: "", active: false, desc: "Временно недоступно." },
-            { count: "1 000 000 Просмотров", price: "$49.99", oldPrice: "", active: false, desc: "Временно недоступно." }
+            { count: "1 000 Просмотров", price: "$0.19", oldPrice: "", active: true, desc: "Быстрый старт видео в TikTok." },
+            { count: "10 000 Просмотров", price: "$1.49", oldPrice: "$1.99", active: true, desc: "Вывод видео в глобальные рекомендации." },
+            { count: "100 000 Просмотров", price: "$12.99", oldPrice: "", active: true, desc: "Вирусный охват для любого видео." }
           ]
         },
         {
           key: "likes",
           items: [
-            { count: "1 000 Лайков", price: "$1.09", oldPrice: "", active: true, desc: "Лайки на любые ролики TikTok." },
-            { count: "10 000 Лайков", price: "$8.99", oldPrice: "$9.99", active: true, desc: "Пакет для максимальной активности профиля." },
-            { count: "100 000 Лайков", price: "$42.99", oldPrice: "", active: false, desc: "Временно недоступно." },
-            { count: "1 000 000 Лайков", price: "$114.99", oldPrice: "", active: false, desc: "Временно недоступно." }
+            { count: "1 000 Лайков", price: "$0.79", oldPrice: "", active: true, desc: "Быстрые лайки от активных пользователей." },
+            { count: "5 000 Лайков", price: "$3.49", oldPrice: "$3.99", active: true, desc: "Пакет лайков для удержания видео в рекомендациях." }
+          ]
+        }
+      ],
+      crypto: [
+        {
+          key: "cryptoExchange",
+          items: [
+            { count: "USDT ➔ TRC20", price: "+ 2.3% Комиссия", oldPrice: "", active: true, desc: "Быстрый перевод USDT TRC20. Комиссия 2.3%." },
+            { count: "USDT ➔ Cashout", price: "+ 3.0% Комиссия", oldPrice: "", active: true, desc: "Вывод USDT в фиат и карты. Безопасная сделка." }
           ]
         }
       ]
@@ -612,31 +645,27 @@
     const translations = {
       ru: {
         subtitle: "Цифровые товары, Telegram & Обмен Криптовалют",
-        followers: "Подписчики",
-        views: "Просмотры",
-        likes: "Лайки",
         tgPremium: "Telegram Premium ⭐",
         tgStars: "Telegram Stars 🌟",
         cryptoExchange: "Обмен Криптовалюты ⚡",
+        followers: "Подписчики",
+        views: "Просмотры 👁️",
+        likes: "Лайки ❤️",
         footer: "Все права защищены",
         active: "В наличии",
-        inactive: "Нет в наличии",
-        sale: "Скидка",
-        contactTitle: "Связаться для покупки:"
+        sale: "Скидка"
       },
       en: {
         subtitle: "Digital Goods, Telegram & Crypto Exchange",
-        followers: "Followers",
-        views: "Views",
-        likes: "Likes",
         tgPremium: "Telegram Premium ⭐",
         tgStars: "Telegram Stars 🌟",
         cryptoExchange: "Crypto Exchange ⚡",
+        followers: "Followers",
+        views: "Views 👁️",
+        likes: "Likes ❤️",
         footer: "All rights reserved",
         active: "In stock",
-        inactive: "Out of stock",
-        sale: "Sale",
-        contactTitle: "Contact to buy:"
+        sale: "Sale"
       }
     };
 
@@ -650,7 +679,11 @@
       document.getElementById('modal-overlay').classList.add('active');
     }
 
-    function closeModal(e) {
+    function processPayment() {
+      window.location.href = `https://tonhub.com/transfer/${MY_TON_WALLET}`;
+    }
+
+    function closeModal() {
       document.getElementById('modal-overlay').classList.remove('active');
     }
 
@@ -658,8 +691,10 @@
       const grid = document.getElementById(`grid-${platform}`);
       grid.innerHTML = '';
 
+      if (!SERVICES_DATA[platform]) return;
+
       SERVICES_DATA[platform].forEach(cat => {
-        const title = translations[currentLang][cat.key];
+        const title = translations[currentLang][cat.key] || cat.key;
         
         let itemsHTML = cat.items.map(item => `
           <div class="price-item" onclick='openModal(${JSON.stringify(item)}, "${title}")'>
@@ -669,9 +704,9 @@
                 ${item.sale ? `<span class="sale-badge">${translations[currentLang].sale}</span>` : ''}
               </div>
               <div class="status-group">
-                <span class="item-status ${item.active ? 'active' : 'inactive'}">
+                <span class="item-status active">
                   <span class="status-dot"></span>
-                  ${item.active ? translations[currentLang].active : translations[currentLang].inactive}
+                  ${translations[currentLang].active}
                 </span>
               </div>
             </div>
@@ -689,10 +724,6 @@
             <h3>${title}</h3>
             <div>${itemsHTML}</div>
           </div>
-          <div class="action-buttons">
-            <a href="https://discord.gg/твой_сервер" target="_blank" class="btn-contact btn-discord">Discord</a>
-            <a href="https://www.instagram.com/gafurov12478/" target="_blank" class="btn-contact btn-insta">Instagram</a>
-          </div>
         `;
         grid.appendChild(card);
       });
@@ -702,18 +733,12 @@
       currentLang = lang;
       document.getElementById('subtitle').innerText = translations[lang].subtitle;
       document.getElementById('footer-text').innerText = translations[lang].footer;
-      document.getElementById('m-contact-title').innerText = translations[lang].contactTitle;
-
-      document.getElementById('btn-ru').classList.toggle('active', lang === 'ru');
-      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
-
-      ['telegram', 'crypto', 'instagram', 'tiktok'].forEach(renderPlatform);
+      ['telegram', 'instagram', 'tiktok', 'crypto'].forEach(renderPlatform);
     }
 
     function switchTab(e, platform) {
       document.querySelectorAll('.platform-block').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
-
       document.getElementById(platform).classList.add('active');
       e.currentTarget.classList.add('active');
     }
