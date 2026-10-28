@@ -1,0 +1,302 @@
+{
+  "products": [
+    {
+      "id": "stars150",
+      "category": "Telegram Stars",
+      "name": "150 Stars",
+      "price": 2.59
+    },
+    {
+      "id": "stars400",
+      "category": "Telegram Stars",
+      "name": "400 Stars",
+      "price": 6.99
+    },
+    {
+      "id": "stars500",
+      "category": "Telegram Stars",
+      "name": "500 Stars (Bonus)",
+      "price": 8.29
+    },
+    {
+      "id": "stars1000",
+      "category": "Telegram Stars",
+      "name": "1000 Stars (Bonus)",
+      "price": 15.99
+    },
+    {
+      "id": "prem1",
+      "category": "Telegram Premium",
+      "name": "1 месяц",
+      "price": 3.49
+    },
+    {
+      "id": "prem3",
+      "category": "Telegram Premium",
+      "name": "3 месяца",
+      "price": 8.99
+    },
+    {
+      "id": "prem6",
+      "category": "Telegram Premium",
+      "name": "6 месяцев",
+      "price": 14.99
+    },
+    {
+      "id": "prem12",
+      "category": "Telegram Premium",
+      "name": "12 месяцев",
+      "price": 26.99
+    },
+    {
+      "id": "igf1",
+      "category": "Instagram",
+      "name": "1000 подписчиков",
+      "price": 0.99
+    },
+    {
+      "id": "igf10",
+      "category": "Instagram",
+      "name": "10000 подписчиков",
+      "price": 8.99
+    },
+    {
+      "id": "igf100",
+      "category": "Instagram",
+      "name": "100000 подписчиков",
+      "price": 39.99
+    },
+    {
+      "id": "igf1000",
+      "category": "Instagram",
+      "name": "1000000 подписчиков",
+      "price": 99.99
+    },
+    {
+      "id": "igv1",
+      "category": "Instagram",
+      "name": "1000 просмотров",
+      "price": 0.29
+    },
+    {
+      "id": "igv10",
+      "category": "Instagram",
+      "name": "10000 просмотров",
+      "price": 2.99
+    },
+    {
+      "id": "igv100",
+      "category": "Instagram",
+      "name": "100000 просмотров",
+      "price": 19.99
+    },
+    {
+      "id": "igv1000",
+      "category": "Instagram",
+      "name": "1000000 просмотров",
+      "price": 59.99
+    },
+    {
+      "id": "igl1",
+      "category": "Instagram",
+      "name": "1000 лайков",
+      "price": 0.59
+    },
+    {
+      "id": "igl10",
+      "category": "Instagram",
+      "name": "10000 лайков",
+      "price": 6.99
+    },
+    {
+      "id": "igl100",
+      "category": "Instagram",
+      "name": "100000 лайков",
+      "price": 32.99
+    },
+    {
+      "id": "igl1000",
+      "category": "Instagram",
+      "name": "1000000 лайков",
+      "price": 74.99
+    },
+    {
+      "id": "ttf1",
+      "category": "TikTok",
+      "name": "1000 подписчиков",
+      "price": 2.29
+    },
+    {
+      "id": "ttf10",
+      "category": "TikTok",
+      "name": "10000 подписчиков",
+      "price": 14.99
+    },
+    {
+      "id": "ttf100",
+      "category": "TikTok",
+      "name": "100000 подписчиков",
+      "price": 69.99
+    },
+    {
+      "id": "ttf1000",
+      "category": "TikTok",
+      "name": "1000000 подписчиков",
+      "price": 139.99
+    },
+    {
+      "id": "ttv1",
+      "category": "TikTok",
+      "name": "1000 просмотров",
+      "price": 0.25
+    },
+    {
+      "id": "ttv10",
+      "category": "TikTok",
+      "name": "10000 просмотров",
+      "price": 1.99
+    },
+    {
+      "id": "ttv100",
+      "category": "TikTok",
+      "name": "100000 просмотров",
+      "price": 14.99
+    },
+    {
+      "id": "ttv1000",
+      "category": "TikTok",
+      "name": "1000000 просмотров",
+      "price": 49.99
+    },
+    {
+      "id": "ttl1",
+      "category": "TikTok",
+      "name": "1000 лайков",
+      "price": 1.09
+    },
+    {
+      "id": "ttl10",
+      "category": "TikTok",
+      "name": "10000 лайков",
+      "price": 9.99
+    },
+    {
+      "id": "ttl100",
+      "category": "TikTok",
+      "name": "100000 лайков",
+      "price": 42.99
+    },
+    {
+      "id": "crypto_usdt",
+      "category": "Crypto",
+      "name": "USDT → TRC20",
+      "price": 0,
+      "fee": 2.3
+    },
+    {
+      "id": "crypto_card",
+      "category": "Crypto",
+      "name": "USDT → карта",
+      "price": 0,
+      "fee": 3
+    }
+  ],
+  "orders": [
+    {
+      "id": 1001,
+      "userId": 7752578241,
+      "username": "A1231232",
+      "serviceId": "ig_followers",
+      "service": "Подписчики",
+      "quantity": 1000,
+      "link": "https://123",
+      "status": "Ожидает ответа",
+      "createdAt": "2026-10-28T18:18:32.107Z"
+    },
+    {
+      "id": 1002,
+      "userId": 7752578241,
+      "username": "A1231232",
+      "firstName": "A",
+      "serviceId": "tg_stars_100",
+      "service": "100 Stars ⭐",
+      "priceUSD": 2.09,
+      "cryptoAmountUSDT": null,
+      "feePercent": null,
+      "target": "@123",
+      "status": "Принят",
+      "createdAt": "2026-10-28T18:32:54.367Z",
+      "updatedAt": "2026-10-28T18:45:36.421Z"
+    },
+    {
+      "id": 1003,
+      "userId": 7752578241,
+      "username": "A1231232",
+      "firstName": "A",
+      "serviceId": "ig_followers_10000",
+      "service": "10 000 подписчиков",
+      "priceUSD": 8.09,
+      "cryptoAmountUSDT": null,
+      "feePercent": null,
+      "target": "@123123",
+      "status": "Принят",
+      "createdAt": "2026-10-28T18:36:38.904Z",
+      "updatedAt": "2026-10-28T18:46:29.849Z"
+    },
+    {
+      "id": 1004,
+      "userId": 7752578241,
+      "username": "A1231232",
+      "name": "A",
+      "service": "Telegram Stars: 400 Stars",
+      "productId": "stars400",
+      "priceUSD": 6.99,
+      "details": "@123",
+      "status": "Отклонён",
+      "createdAt": "2026-10-28T18:44:16.098Z",
+      "updatedAt": "2026-10-28T18:54:33.891Z"
+    },
+    {
+      "id": 1005,
+      "userId": 7752578241,
+      "username": "A1231232",
+      "name": "A",
+      "service": "Telegram Stars: 400 Stars",
+      "productId": "stars400",
+      "priceUSD": 6.99,
+      "details": "@123",
+      "status": "Принят",
+      "createdAt": "2026-10-28T18:48:18.695Z",
+      "updatedAt": "2026-10-28T18:48:26.375Z"
+    },
+    {
+      "id": 1006,
+      "userId": 6090224701,
+      "username": "hes1or",
+      "name": "𝚂𝙰𝙵𝙰𝚁𝙰𝙻𝙸𝚉𝙾𝙳𝙰",
+      "service": "Telegram Stars: 150 Stars",
+      "productId": "stars150",
+      "priceUSD": 2.59,
+      "details": "https://t.me/hes1or",
+      "status": "Принят",
+      "createdAt": "2026-10-28T18:50:51.669Z",
+      "updatedAt": "2026-10-28T18:51:18.041Z"
+    }
+  ],
+  "users": [
+    7752578241,
+    {
+      "id": 7752578241,
+      "username": "A1231232",
+      "name": "A",
+      "joinedAt": "2026-10-28T18:43:59.545Z"
+    },
+    {
+      "id": 6090224701,
+      "username": "hes1or",
+      "name": "𝚂𝙰𝙵𝙰𝚁𝙰𝙻𝙸𝚉𝙾𝙳𝙰",
+      "joinedAt": "2026-10-28T18:49:57.293Z"
+    }
+  ],
+  "nextOrderId": 1007
+}
