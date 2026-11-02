@@ -1583,8 +1583,6 @@
                         <!-- BRAND SWITCHER -->
                         <div class="brand-selector">
                             <button class="brand-tab active" data-brand="crystal" onclick="switchBrand('crystal', this)">Crystal</button>
-                            <button class="brand-tab coming-soon" data-brand="carpigiani" onclick="switchBrand('carpigiani', this)">Carpigiani</button>
-                            <button class="brand-tab coming-soon" data-brand="sabirelli" onclick="switchBrand('sabirelli', this)">Sabirelli</button>
                             <button class="brand-tab" data-brand="simonelli" onclick="switchBrand('simonelli', this)">Simonelli</button>
                             <button class="brand-tab" data-brand="macap" onclick="switchBrand('macap', this)">Macap</button>
                             <button class="brand-tab" data-brand="wmf" onclick="switchBrand('wmf', this)">WMF</button>
@@ -1957,12 +1955,6 @@
                             }]
                         }]
                     }]
-                },
-                carpigiani: {
-                    categories: []
-                },
-                sabirelli: {
-                    categories: []
                 },
                 simonelli: {
                     categories: [{
@@ -3596,11 +3588,6 @@
                 const heroButton = document.querySelector('.hero-btn');
                 if (heroButton)
                     heroButton.innerHTML = `${t('heroButton')} <i class="fa-solid fa-arrow-right"></i>`;
-                document.querySelectorAll('.brand-tab[data-brand="carpigiani"],.brand-tab[data-brand="sabirelli"]').forEach(el => {
-                    el.classList.add('coming-soon');
-                    el.setAttribute('data-soon-label', t('soonBadge'));
-                }
-                );
                 renderCatalogStats();
                 if (catalogData[currentBrand] && catalogData[currentBrand].categories.length)
                     renderSidebar();
@@ -3612,10 +3599,7 @@
                     closeProductDetails();
             }
             function showComingSoon(brandName) {
-                const labels = {
-                    carpigiani: 'Carpigiani',
-                    sabirelli: 'Sabirelli'
-                };
+                const labels = {};
                 const label = labels[brandName] || brandName;
                 const grid = document.getElementById('products-grid');
                 const title = document.getElementById('current-category-title');
