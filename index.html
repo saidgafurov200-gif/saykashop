@@ -3,9 +3,56 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Gelato Market — Catalog</title>
+        <title>Gelato Market — оборудование и ингредиенты для джелато и кофе</title>
         <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2064%2064%22%3E%3Cdefs%3E%3ClinearGradient%20id=%22g%22%20x1=%220%22%20y1=%220%22%20x2=%221%22%20y2=%221%22%3E%3Cstop%20offset=%220%22%20stop-color=%22%23ff7597%22/%3E%3Cstop%20offset=%221%22%20stop-color=%22%23e84a8a%22/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect%20width=%2264%22%20height=%2264%22%20rx=%2216%22%20fill=%22url%28%23g%29%22/%3E%3Ctext%20x=%2232%22%20y=%2246%22%20text-anchor=%22middle%22%20font-family=%22Georgia,%27Times%20New%20Roman%27,serif%22%20font-size=%2242%22%20font-weight=%22700%22%20fill=%22%23fff%22%3EG%3C/text%3E%3C/svg%3E">
         <meta name="theme-color" content="#e84a8a">
+        <meta name="description" content="Профессиональное оборудование для джелатерий и кофеен, ингредиенты и кофе в Таджикистане. Официальное дистрибьюторство Crystal, WMF, Simonelli, Macap, Aromitalia.">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Gelato Market">
+        <meta property="og:title" content="Gelato Market — оборудование и ингредиенты для джелато и кофе">
+        <meta property="og:description" content="Профессиональное оборудование для джелатерий и кофеен, ингредиенты и кофе в Таджикистане. Официальное дистрибьюторство Crystal, WMF, Simonelli, Macap, Aromitalia.">
+        <meta property="og:image" content="https://images.unsplash.com/photo-1563805042-7684c019e1cb?q=80&w=1200&auto=format&fit=crop">
+        <meta property="og:locale" content="ru_RU">
+        <meta name="twitter:card" content="summary_large_image">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+        <link rel="preconnect" href="https://images.unsplash.com">
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Store",
+                "name": "Gelato Market",
+                "description": "Профессиональное оборудование для джелатерий и кофеен, ингредиенты и кофе в Таджикистане: Crystal, WMF, Simonelli, Macap, Aromitalia.",
+                "telephone": "+992985663370",
+                "email": "info@sabirelli.tj",
+                "areaServed": {
+                    "@type": "Country",
+                    "name": "Tajikistan"
+                },
+                "brand": [
+                    {
+                        "@type": "Brand",
+                        "name": "Crystal"
+                    },
+                    {
+                        "@type": "Brand",
+                        "name": "WMF"
+                    },
+                    {
+                        "@type": "Brand",
+                        "name": "Simonelli"
+                    },
+                    {
+                        "@type": "Brand",
+                        "name": "Macap"
+                    },
+                    {
+                        "@type": "Brand",
+                        "name": "Aromitalia"
+                    }
+                ]
+            }</script>
         <!-- Google Fonts & Font Awesome Icons -->
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -2413,6 +2460,679 @@
                     opacity: 0
                 }
             }
+
+            /* ===== CALM ANIMATED BACKGROUND (replaces bright ribbons) ===== */
+            .bg-cv {
+                display: none
+            }
+
+            .bg-blob {
+                opacity: .5;
+                filter: blur(90px)
+            }
+
+            .bg-blob.b1 {
+                background: radial-gradient(circle,#ffd3e2,transparent 68%)
+            }
+
+            .bg-blob.b2 {
+                background: radial-gradient(circle,#d9d0ff,transparent 68%)
+            }
+
+            .bg-blob.b3 {
+                left: 30vw;
+                top: -8vmax;
+                width: 42vmax;
+                height: 42vmax;
+                background: radial-gradient(circle,#ffe4d1,transparent 68%);
+                animation: drift 30s ease-in-out infinite alternate
+            }
+
+            .bg-blob.b4 {
+                left: -10vmax;
+                bottom: -10vmax;
+                width: 38vmax;
+                height: 38vmax;
+                background: radial-gradient(circle,#ffc9da,transparent 68%);
+                animation: drift 36s ease-in-out infinite alternate-reverse
+            }
+
+            @keyframes drift {
+                0% {
+                    transform: translate(0,0) scale(1)
+                }
+
+                50% {
+                    transform: translate(14vw,9vh) scale(1.12)
+                }
+
+                100% {
+                    transform: translate(-6vw,16vh) scale(.96)
+                }
+            }
+
+            .bg-waves {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                height: 38vh;
+                overflow: hidden;
+                animation: cvIn 2s ease var(--b) backwards
+            }
+
+            .wv {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 200%;
+                animation: wv 60s linear infinite
+            }
+
+            .wv.w1 {
+                height: 100%;
+                animation-duration: 70s
+            }
+
+            .wv.w2 {
+                height: 78%;
+                animation-duration: 52s;
+                animation-direction: reverse
+            }
+
+            .wv.w3 {
+                height: 52%;
+                animation-duration: 38s
+            }
+
+            @keyframes wv {
+                to {
+                    transform: translateX(-50%)
+                }
+            }
+
+            .bg-fx::after {
+                content: "";
+                position: absolute;
+                inset: -60%;
+                background: linear-gradient(115deg,transparent 42%,rgba(255,255,255,.4) 50%,transparent 58%);
+                animation: sweep 18s ease-in-out infinite
+            }
+
+            @keyframes sweep {
+                0% {
+                    transform: translateX(-40%)
+                }
+
+                100% {
+                    transform: translateX(40%)
+                }
+            }
+
+            .bg-sp {
+                opacity: .5
+            }
+
+            @media(max-width: 700px) {
+                .bg-waves {
+                    height:26vh
+                }
+
+                .bg-blob {
+                    filter: blur(60px)
+                }
+            }
+
+            @media(prefers-reduced-motion:reduce) {
+                .wv,.bg-fx::after,.bg-blob {
+                    animation: none!important
+                }
+            }
+
+            /* ===== UX: dock, tab bar, progress, reveal ===== */
+            .sp-bar {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                z-index: 1500;
+                transform-origin: 0 50%;
+                transform: scaleX(var(--p,0));
+                background: linear-gradient(90deg,#ff7597,#b49bff);
+                pointer-events: none
+            }
+
+            .dock {
+                position: fixed;
+                right: 18px;
+                bottom: 18px;
+                z-index: 1400;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                gap: 10px;
+                animation: fadeIn .7s ease calc(var(--b) + .9s) backwards
+            }
+
+            .dock-menu {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-end;
+                pointer-events: none
+            }
+
+            .dk {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 10px 16px 10px 12px;
+                border-radius: 40px;
+                background: #fff;
+                color: #2b232a;
+                text-decoration: none;
+                font-weight: 700;
+                font-size: .85rem;
+                box-shadow: 0 10px 28px rgba(67,51,128,.2);
+                opacity: 0;
+                transform: translateY(14px) scale(.9);
+                transition: opacity .3s,transform .35s cubic-bezier(.34,1.56,.64,1)
+            }
+
+            .dk i {
+                width: 34px;
+                height: 34px;
+                border-radius: 50%;
+                display: grid;
+                place-items: center;
+                color: #fff;
+                font-size: 1rem
+            }
+
+            .dk.wa i {
+                background: #25d366
+            }
+
+            .dk.tg i {
+                background: #229ed9
+            }
+
+            .dk.ph i {
+                background: var(--pink-gradient,linear-gradient(135deg,#ff7597,#e84a8a))
+            }
+
+            .dock.open .dock-menu {
+                pointer-events: auto
+            }
+
+            .dock.open .dk {
+                opacity: 1;
+                transform: none
+            }
+
+            .dock.open .dk:nth-child(2) {
+                transition-delay: .05s
+            }
+
+            .dock.open .dk:nth-child(1) {
+                transition-delay: .1s
+            }
+
+            .dock-fab {
+                position: relative;
+                width: 58px;
+                height: 58px;
+                border: 0;
+                border-radius: 50%;
+                cursor: pointer;
+                color: #fff;
+                font-size: 1.4rem;
+                background: linear-gradient(135deg,#ff7597,#e84a8a);
+                box-shadow: 0 12px 30px rgba(232,74,138,.5);
+                transition: transform .3s
+            }
+
+            .dock-fab::after {
+                content: "";
+                position: absolute;
+                inset: 0;
+                border-radius: 50%;
+                border: 2px solid #ff7597;
+                animation: ping 2.2s ease-out infinite
+            }
+
+            .dock.open .dock-fab {
+                transform: rotate(90deg)
+            }
+
+            .dock.open .dock-fab::after {
+                animation: none
+            }
+
+            .to-top {
+                position: fixed;
+                left: 18px;
+                bottom: 18px;
+                z-index: 1400;
+                width: 46px;
+                height: 46px;
+                border: 0;
+                border-radius: 50%;
+                cursor: pointer;
+                background: #fff;
+                color: var(--pink-accent);
+                box-shadow: 0 8px 22px rgba(67,51,128,.2);
+                opacity: 0;
+                transform: translateY(20px);
+                pointer-events: none;
+                transition: .35s
+            }
+
+            .to-top.show {
+                opacity: 1;
+                transform: none;
+                pointer-events: auto
+            }
+
+            .tabbar {
+                display: none
+            }
+
+            @media(max-width: 700px) {
+                header nav {
+                    display:none!important
+                }
+
+                body {
+                    padding-bottom: 78px
+                }
+
+                .dock {
+                    bottom: 90px;
+                    right: 14px
+                }
+
+                .to-top {
+                    bottom: 90px;
+                    left: 14px
+                }
+
+                .tabbar {
+                    display: flex;
+                    position: fixed;
+                    left: 10px;
+                    right: 10px;
+                    bottom: 10px;
+                    z-index: 1450;
+                    padding: 6px;
+                    border-radius: 24px;
+                    background: rgba(255,255,255,.88);
+                    backdrop-filter: blur(18px) saturate(1.6);
+                    box-shadow: 0 12px 36px rgba(67,51,128,.25);
+                    border: 1px solid rgba(232,74,138,.15)
+                }
+
+                .tabbar button {
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 3px;
+                    padding: 8px 2px;
+                    border: 0;
+                    background: none;
+                    border-radius: 18px;
+                    color: #8a7d88;
+                    font: 700 .62rem 'Plus Jakarta Sans',sans-serif;
+                    cursor: pointer;
+                    transition: .3s
+                }
+
+                .tabbar button i {
+                    font-size: 1.1rem
+                }
+
+                .tabbar button.active {
+                    color: #fff;
+                    background: linear-gradient(135deg,#ff7597,#e84a8a);
+                    box-shadow: 0 6px 16px rgba(232,74,138,.4)
+                }
+            }
+
+            .rv {
+                opacity: 0
+            }
+
+            .rv.in {
+                animation: revIn .7s cubic-bezier(.22,.61,.36,1) forwards
+            }
+
+            @keyframes revIn {
+                from {
+                    opacity: 0;
+                    translate: 0 26px
+                }
+
+                to {
+                    opacity: 1;
+                    translate: 0 0
+                }
+            }
+
+            @media(prefers-reduced-motion:reduce) {
+                .rv {
+                    opacity: 1
+                }
+
+                .rv.in {
+                    animation: none
+                }
+
+                .dock-fab::after {
+                    animation: none
+                }
+            }
+
+            /* ===== HERO BRAND LINKS ===== */
+            .hero-brands span[data-go] {
+                cursor: pointer;
+                position: relative;
+                transition: transform .3s,background .3s,box-shadow .3s,padding .3s
+            }
+
+            .hero-brands span[data-go]::after {
+                content: "\2192";
+                display: inline-block;
+                max-width: 0;
+                opacity: 0;
+                overflow: hidden;
+                vertical-align: bottom;
+                transition: max-width .3s,opacity .3s,margin .3s
+            }
+
+            .hero-brands span[data-go]:hover,.hero-brands span[data-go]:focus-visible {
+                background: linear-gradient(135deg,#ff7597,#e84a8a)!important;
+                border-color: transparent!important;
+                color: #fff!important;
+                transform: translateY(-3px);
+                box-shadow: 0 8px 22px rgba(232,74,138,.45)
+            }
+
+            .hero-brands span[data-go]:hover::after,.hero-brands span[data-go]:focus-visible::after {
+                max-width: 20px;
+                opacity: 1;
+                margin-left: 6px
+            }
+
+            /* ===== PREMIUM SHOWCASE ===== */
+            :root {
+                --bg-color: #faf7f4;
+                --card-border: rgba(40,26,34,.09);
+                --text-muted: #7a6c76;
+                --shadow-card: 0 1px 2px rgba(30,20,28,.04),0 14px 34px rgba(30,20,28,.06);
+                --ink: #1d1519
+            }
+
+            /* quiet hero: keep the photo ring, drop the noise */
+            .bg-fx {
+                display: none!important
+            }
+
+            .fx-canvas,.h3-bokeh,.h3-orbit,.hero-3d::before,.hero-banner::after {
+                display: none!important
+            }
+
+            .fx-aurora i {
+                opacity: .28
+            }
+
+            .hero-banner .hero-title span {
+                animation: none;
+                background: none;
+                -webkit-background-clip: initial;
+                background-clip: initial;
+                color: #ff8fb1
+            }
+
+            .hero-btn {
+                animation: none;
+                border-radius: 40px;
+                padding: 15px 34px;
+                box-shadow: 0 10px 26px rgba(232,74,138,.28);
+                letter-spacing: .01em
+            }
+
+            .hero-btn:hover {
+                box-shadow: 0 14px 32px rgba(232,74,138,.4)
+            }
+
+            .hero-badge {
+                background: transparent;
+                border: 1px solid rgba(255,255,255,.35);
+                color: #fff;
+                letter-spacing: .22em;
+                font-weight: 600
+            }
+
+            .hero-title {
+                letter-spacing: -.025em;
+                line-height: 1.08
+            }
+
+            .hero-brands span {
+                background: transparent!important;
+                border: 1px solid rgba(255,255,255,.28)!important;
+                font-weight: 600;
+                letter-spacing: .04em
+            }
+
+            .hero-banner {
+                border-radius: 32px;
+                margin-bottom: 4.5rem;
+                box-shadow: 0 30px 70px rgba(30,20,40,.18)!important
+            }
+
+            @media(min-width: 901px) {
+                .hero-banner {
+                    min-height:540px;
+                    padding: 5rem 4.5rem
+                }
+            }
+
+            .container {
+                padding-top: 2.5rem;
+                padding-bottom: 5rem
+            }
+
+            /* header: clean, light, text navigation */
+            header {
+                background: rgba(250,247,244,.88);
+                box-shadow: none;
+                border-bottom: 1px solid var(--card-border)
+            }
+
+            nav {
+                background: transparent;
+                border: 0;
+                padding: 0;
+                gap: 4px
+            }
+
+            .nav-btn {
+                border-radius: 0;
+                padding: 10px 18px;
+                color: var(--text-muted);
+                font-weight: 600;
+                letter-spacing: .01em;
+                position: relative;
+                background: none!important;
+                box-shadow: none!important
+            }
+
+            .nav-btn::after {
+                content: "";
+                position: absolute;
+                left: 18px;
+                right: 18px;
+                bottom: 2px;
+                height: 2px;
+                border-radius: 2px;
+                background: var(--pink-accent);
+                transform: scaleX(0);
+                transition: transform .35s cubic-bezier(.22,.61,.36,1)
+            }
+
+            .nav-btn:hover {
+                color: var(--ink)
+            }
+
+            .nav-btn.active {
+                color: var(--ink)!important
+            }
+
+            .nav-btn.active::after,.nav-btn:hover::after {
+                transform: scaleX(1)
+            }
+
+            /* section titles */
+            #current-category-title,.catalog-stats h2 {
+                font-family: 'Playfair Display',serif;
+                font-weight: 700;
+                letter-spacing: -.015em
+            }
+
+            #current-category-title {
+                font-size: 2rem
+            }
+
+            /* stats */
+            .catalog-stats {
+                margin: 0 0 4rem
+            }
+
+            .stat-card {
+                border-radius: 20px;
+                box-shadow: var(--shadow-card);
+                border: 1px solid var(--card-border);
+                padding: 22px
+            }
+
+            .stat-card:hover {
+                transform: none;
+                box-shadow: var(--shadow-card)
+            }
+
+            /* product cards: one calm, uniform look */
+            .crystal-grid {
+                grid-template-columns: repeat(auto-fill,minmax(240px,1fr));
+                gap: 1.75rem
+            }
+
+            .crystal-card {
+                padding: 0 0 1.4rem;
+                border-radius: 22px;
+                overflow: hidden;
+                border: 1px solid var(--card-border);
+                box-shadow: var(--shadow-card);
+                justify-content: flex-start
+            }
+
+            .crystal-img-box {
+                height: 220px;
+                margin: 0 0 1.1rem;
+                background: #f4efeb
+            }
+
+            .crystal-img-box img {
+                max-width: 82%;
+                max-height: 82%;
+                object-fit: contain;
+                mix-blend-mode: multiply;
+                transition: transform .6s cubic-bezier(.22,.61,.36,1)
+            }
+
+            .crystal-card:hover {
+                transform: translateY(-6px);
+                box-shadow: 0 2px 4px rgba(30,20,28,.04),0 26px 52px rgba(30,20,28,.12);
+                border-color: rgba(232,74,138,.3)
+            }
+
+            .crystal-card:hover .crystal-img-box img {
+                transform: scale(1.05)
+            }
+
+            .crystal-title {
+                font-size: .92rem;
+                font-weight: 700;
+                padding: 0 16px;
+                margin-top: 0;
+                letter-spacing: .005em
+            }
+
+            .crystal-badge {
+                top: 14px;
+                left: 14px;
+                width: 30px;
+                height: 30px;
+                background: rgba(255,255,255,.92);
+                color: var(--pink-accent);
+                border: 1px solid var(--card-border);
+                box-shadow: 0 4px 12px rgba(30,20,28,.08)
+            }
+
+            .category-intro {
+                border-radius: 20px;
+                padding: 20px 22px;
+                box-shadow: none;
+                background: transparent;
+                border: 1px solid var(--card-border)
+            }
+
+            /* sidebar + contacts */
+            .sidebar-categories {
+                border-radius: 24px;
+                background: linear-gradient(180deg,#2c2150,#3a2c6b);
+                box-shadow: 0 24px 50px rgba(44,33,80,.25)
+            }
+
+            .contact-card {
+                border-radius: 22px;
+                box-shadow: var(--shadow-card)
+            }
+
+            /* quiet utilities */
+            .dock-fab::after {
+                display: none
+            }
+
+            .dock-fab {
+                box-shadow: 0 12px 28px rgba(232,74,138,.35)
+            }
+
+            @media(max-width: 700px) {
+                .container {
+                    padding:1.5rem 1rem 4rem
+                }
+
+                .crystal-grid {
+                    grid-template-columns: repeat(2,1fr);
+                    gap: 1rem
+                }
+
+                .crystal-img-box {
+                    height: 150px
+                }
+
+                .crystal-title {
+                    font-size: .82rem;
+                    padding: 0 10px
+                }
+
+                .hero-banner {
+                    margin-bottom: 3rem
+                }
+            }
         </style>
     </head>
     <body>
@@ -2466,7 +3186,19 @@
         <div class="bg-fx" aria-hidden="true">
             <div class="bg-blob b1"></div>
             <div class="bg-blob b2"></div>
-            <canvas class="bg-cv" id="bgCv"></canvas>
+            <div class="bg-waves">
+                <svg class="wv w1" viewBox="0 0 2880 300" preserveAspectRatio="none">
+                    <path fill="rgba(255,184,208,.30)" d="M0,150 C240,70 480,230 720,150 C960,70 1200,230 1440,150 C1680,70 1920,230 2160,150 C2400,70 2640,230 2880,150 L2880,300 L0,300Z"/>
+                </svg>
+                <svg class="wv w2" viewBox="0 0 2880 300" preserveAspectRatio="none">
+                    <path fill="rgba(190,172,255,.24)" d="M0,150 C240,70 480,230 720,150 C960,70 1200,230 1440,150 C1680,70 1920,230 2160,150 C2400,70 2640,230 2880,150 L2880,300 L0,300Z"/>
+                </svg>
+                <svg class="wv w3" viewBox="0 0 2880 300" preserveAspectRatio="none">
+                    <path fill="rgba(255,255,255,.55)" d="M0,150 C240,70 480,230 720,150 C960,70 1200,230 1440,150 C1680,70 1920,230 2160,150 C2400,70 2640,230 2880,150 L2880,300 L0,300Z"/>
+                </svg>
+            </div>
+            <div class="bg-blob b3"></div>
+            <div class="bg-blob b4"></div>
             <div class="bg-par" id="bgPar"></div>
             <div class="bg-sp-wrap" id="bgSp"></div>
         </div>
@@ -2532,12 +3264,12 @@
                             Открыть Каталог Оборудования <i class="fa-solid fa-arrow-right"></i>
                         </button>
                         <div class="hero-brands">
-                            <span>Crystal</span>
-                            <span>WMF</span>
-                            <span>Simonelli</span>
-                            <span>Macap</span>
-                            <span>Aromaitalia</span>
-                            <span>Arabica</span>
+                            <span role="link" tabindex="0" data-go="equipments:crystal" title="Crystal">Crystal</span>
+                            <span role="link" tabindex="0" data-go="equipments:wmf" title="WMF">WMF</span>
+                            <span role="link" tabindex="0" data-go="equipments:simonelli" title="Simonelli">Simonelli</span>
+                            <span role="link" tabindex="0" data-go="equipments:macap" title="Macap">Macap</span>
+                            <span role="link" tabindex="0" data-go="ingredients:aroma" title="Aromaitalia">Aromaitalia</span>
+                            <span role="link" tabindex="0" data-go="ingredients:coffee" title="Arabica">Arabica</span>
                         </div>
                     </div>
                 </div>
@@ -6263,7 +6995,7 @@
                     new ResizeObserver(size).observe(hero);
                 else
                     addEventListener('resize', size);
-                if (rm) {
+                if (true) {
                     draw(0)
                 } else {
                     raf = requestAnimationFrame(loop)
@@ -6345,201 +7077,228 @@
             }
             )();
 
-            /* ===== LIVE SILK RIBBONS: twisting satin, reacts to mouse / touch / scroll ===== */
+            /* ===== UX UPGRADES ===== */
             (function() {
-                const cv = document.getElementById('bgCv');
-                if (!cv)
-                    return;
-                const ctx = cv.getContext('2d')
-                  , rm = matchMedia('(prefers-reduced-motion:reduce)').matches
-                  , mob = innerWidth < 700;
-                const P = [{
-                    a: [340, 100, 72],
-                    b: [322, 85, 50]
-                }, {
-                    a: [258, 100, 78],
-                    b: [272, 70, 54]
-                }, {
-                    a: [28, 100, 78],
-                    b: [12, 95, 62]
-                }, {
-                    a: [330, 100, 84],
-                    b: [262, 90, 70]
-                }];
-                let RB = [{
-                    y: .16,
-                    A: .07,
-                    w: 74,
-                    p: 0,
-                    ph: 0,
-                    sp: .5
-                }, {
-                    y: .36,
-                    A: .11,
-                    w: 120,
-                    p: 1,
-                    ph: 2,
-                    sp: .38
-                }, {
-                    y: .57,
-                    A: .09,
-                    w: 62,
-                    p: 2,
-                    ph: 4,
-                    sp: .62
-                }, {
-                    y: .78,
-                    A: .11,
-                    w: 140,
-                    p: 3,
-                    ph: 1,
-                    sp: .3
-                }, {
-                    y: .93,
-                    A: .06,
-                    w: 52,
-                    p: 0,
-                    ph: 5,
-                    sp: .55
-                }, {
-                    y: .48,
-                    A: .2,
-                    w: 38,
-                    p: 2,
-                    ph: 3,
-                    sp: .7
-                }];
-                if (mob)
-                    RB = [RB[0], RB[1], RB[3], RB[5]];
-                const N = mob ? 46 : 90
-                  , TAU = 6.2832;
-                let W, H, dpr, t = 0, last = 0, fr = 0, px = -999, py = 0, tx = -999, ty = 0, boost = 0, ls = scrollY;
-                function size() {
-                    dpr = Math.min(devicePixelRatio || 1, mob ? 1.25 : 1.5);
-                    W = innerWidth;
-                    H = innerHeight;
-                    cv.width = W * dpr;
-                    cv.height = H * dpr;
-                    ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+                const PH = '992985663370'
+                  , $ = (h) => {
+                    const d = document.createElement('div');
+                    d.innerHTML = h.trim();
+                    return d.firstChild
                 }
-                let lw = innerWidth
-                  , lh = innerHeight;
-                addEventListener('resize', () => {
-                    if (innerWidth !== lw || Math.abs(innerHeight - lh) > 120) {
-                        lw = innerWidth;
-                        lh = innerHeight;
-                        size()
+                ;
+                const rm = matchMedia('(prefers-reduced-motion:reduce)').matches;
+                /* progress bar + back to top */
+                const bar = $('<div class="sp-bar" aria-hidden="true"></div>')
+                  , top = $('<button class="to-top" type="button" aria-label="Наверх"><i class="fa-solid fa-arrow-up"></i></button>');
+                document.body.append(bar, top);
+                let tk = false;
+                const onS = () => {
+                    if (tk)
+                        return;
+                    tk = true;
+                    requestAnimationFrame( () => {
+                        const m = document.documentElement.scrollHeight - innerHeight;
+                        bar.style.setProperty('--p', m > 0 ? Math.min(1, scrollY / m) : 0);
+                        top.classList.toggle('show', scrollY > 700);
+                        tk = false
+                    }
+                    )
+                }
+                ;
+                addEventListener('scroll', onS, {
+                    passive: true
+                });
+                onS();
+                top.onclick = () => scrollTo({
+                    top: 0,
+                    behavior: rm ? 'auto' : 'smooth'
+                });
+                /* contact dock */
+                const L = {
+                    ru: ['Позвонить', 'Связаться'],
+                    en: ['Call us', 'Contact us'],
+                    tr: ['Ara', 'İletişim'],
+                    tg: ['Занг задан', 'Тамос']
+                };
+                const dock = $(`<div class="dock" id="dock"><div class="dock-menu">
+<a class="dk wa" href="https://wa.me/${PH}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i><span>WhatsApp</span></a>
+<a class="dk tg" href="https://t.me/+${PH}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-telegram"></i><span>Telegram</span></a>
+<a class="dk ph" href="tel:+${PH}"><i class="fa-solid fa-phone"></i><span>+992 98 566 33 70</span></a></div>
+<button class="dock-fab" type="button" aria-expanded="false"><i class="fa-solid fa-comment-dots"></i></button></div>`);
+                document.body.append(dock);
+                const fab = dock.querySelector('.dock-fab');
+                const lbl = () => {
+                    const t = (L[typeof currentLang !== 'undefined' ? currentLang : 'ru'] || L.ru)[1];
+                    fab.setAttribute('aria-label', t);
+                    fab.title = t
+                }
+                ;
+                lbl();
+                fab.onclick = e => {
+                    e.stopPropagation();
+                    const o = dock.classList.toggle('open');
+                    fab.setAttribute('aria-expanded', o)
+                }
+                ;
+                document.addEventListener('click', e => {
+                    if (!dock.contains(e.target)) {
+                        dock.classList.remove('open');
+                        fab.setAttribute('aria-expanded', 'false')
                     }
                 }
                 );
-                addEventListener('mousemove', e => {
-                    tx = e.clientX;
-                    ty = e.clientY
+                /* mobile tab bar (labels reuse the site's own translations) */
+                const defs = [['main', 'navHome', 'fa-house'], ['equipments', 'navEquipment', 'fa-snowflake'], ['ingredients', 'navIngredients', 'fa-ice-cream'], ['accessories', 'navAccessories', 'fa-utensils'], ['contacts', 'navContacts', 'fa-location-dot']];
+                const navs = [...document.querySelectorAll('nav .nav-btn')];
+                const tab = $('<div class="tabbar" role="navigation"></div>');
+                defs.forEach( ([id,k,ic], i) => {
+                    const b = document.createElement('button');
+                    b.type = 'button';
+                    b.innerHTML = `<i class="fa-solid ${ic}"></i><span data-i18n="${k}">${(navs[i] ? navs[i].textContent : id).trim()}</span>`;
+                    b.onclick = () => switchPage(id);
+                    tab.append(b)
                 }
-                , {
-                    passive: true
-                });
-                addEventListener('touchmove', e => {
-                    const q = e.touches[0];
-                    if (q) {
-                        tx = q.clientX;
-                        ty = q.clientY
-                    }
+                );
+                document.body.append(tab);
+                const sync = () => [...tab.children].forEach( (b, i) => b.classList.toggle('active', !!navs[i] && navs[i].classList.contains('active')));
+                /* page titles + deep links (#equipments etc.) + back button */
+                const orig = window.switchPage;
+                let silent = false;
+                const title = () => {
+                    const a = document.querySelector('nav .nav-btn.active');
+                    document.title = (a && a.getAttribute('onclick') !== "switchPage('main')" ? a.textContent.trim() + ' — ' : '') + 'Gelato Market'
                 }
-                , {
-                    passive: true
-                });
-                const hsl = (c, k) => `hsl(${c[0]} ${c[1]}% ${Math.min(96, c[2] * k)}%)`;
-                function draw() {
-                    ctx.clearRect(0, 0, W, H);
-                    px += (tx - px) * .08;
-                    py += (ty - py) * .08;
-                    const so = -Math.min(scrollY, 2200) * .05;
-                    for (const r of RB) {
-                        const X = []
-                          , Y = []
-                          , T = []
-                          , pal = P[r.p];
-                        for (let i = 0; i <= N; i++) {
-                            const u = i / N
-                              , x = -.06 * W + u * 1.12 * W;
-                            let y = r.y * H + so + H * r.A * (Math.sin(u * 5.2 + t * r.sp + r.ph) + .5 * Math.sin(u * 11.5 - t * r.sp * 1.6 + r.ph * 2));
-                            const d = (x - px) / (W * .16);
-                            y += (py - y) * .38 * Math.exp(-d * d) * (px > -900 ? 1 : 0);
-                            X.push(x);
-                            Y.push(y);
-                            T.push(u * 7.5 + t * .9 + r.ph);
-                        }
-                        /* soft glow under the ribbon */
-                        ctx.globalAlpha = .1;
-                        ctx.strokeStyle = hsl(pal.a, 1);
-                        ctx.lineWidth = r.w * 1.7;
-                        ctx.lineCap = 'round';
-                        ctx.beginPath();
-                        ctx.moveTo(X[0], Y[0]);
-                        for (let i = 1; i <= N; i++)
-                            ctx.lineTo(X[i], Y[i]);
-                        ctx.stroke();
-                        ctx.globalAlpha = .66;
-                        ctx.lineWidth = .7;
-                        ctx.lineJoin = 'round';
-                        const TX = []
-                          , TY = []
-                          , BX = []
-                          , BY = []
-                          , C = [];
-                        for (let i = 0; i <= N; i++) {
-                            const a = Math.max(0, i - 1)
-                              , b = Math.min(N, i + 1)
-                              , dx = X[b] - X[a]
-                              , dy = Y[b] - Y[a]
-                              , l = Math.hypot(dx, dy) || 1
-                              , nx = -dy / l
-                              , ny = dx / l
-                              , c = Math.cos(T[i])
-                              , hw = r.w / 2 * c;
-                            TX.push(X[i] + nx * hw);
-                            TY.push(Y[i] + ny * hw);
-                            BX.push(X[i] - nx * hw);
-                            BY.push(Y[i] - ny * hw);
-                            C.push(c);
-                        }
-                        for (let i = 0; i < N; i++) {
-                            const c = (C[i] + C[i + 1]) / 2
-                              , ac = Math.abs(c);
-                            const col = ac < .1 ? `hsl(${pal.a[0]} 100% 94%)` : hsl(c > 0 ? pal.a : pal.b, .8 + .2 * ac);
-                            ctx.fillStyle = col;
-                            ctx.strokeStyle = col;
-                            ctx.beginPath();
-                            ctx.moveTo(TX[i], TY[i]);
-                            ctx.lineTo(TX[i + 1], TY[i + 1]);
-                            ctx.lineTo(BX[i + 1], BY[i + 1]);
-                            ctx.lineTo(BX[i], BY[i]);
-                            ctx.closePath();
-                            ctx.fill();
-                            ctx.stroke();
+                ;
+                window.switchPage = function(id) {
+                    orig.apply(this, arguments);
+                    sync();
+                    title();
+                    if (!silent && location.hash !== '#' + id)
+                        history.pushState({
+                            p: id
+                        }, '', '#' + id)
+                }
+                ;
+                const fromHash = () => {
+                    const id = (location.hash || '#main').slice(1);
+                    if (document.getElementById('page-' + id)) {
+                        silent = true;
+                        try {
+                            orig(id);
+                            sync();
+                            title()
+                        } finally {
+                            silent = false
                         }
                     }
-                    ctx.globalAlpha = 1;
                 }
-                function frame(ts) {
-                    requestAnimationFrame(frame);
-                    const dt = Math.min((ts - last) / 1000 || 0, .05);
-                    last = ts;
-                    const d = Math.abs(scrollY - ls);
-                    ls = scrollY;
-                    boost = Math.min(boost + d * .004, 3) * .96;
-                    t += dt * (1 + boost);
-                    if (document.hidden || (mob && (++fr & 1)))
-                        return;
-                    draw();
+                ;
+                addEventListener('popstate', fromHash);
+                if (location.hash)
+                    fromHash();
+                sync();
+                const sl = window.setLanguage;
+                if (sl)
+                    window.setLanguage = function(l) {
+                        sl.apply(this, arguments);
+                        lbl();
+                        sync();
+                        title()
+                    }
+                    ;
+                /* accessibility for icon-only controls */
+                document.querySelectorAll('header select').forEach(e => e.setAttribute('aria-label', 'Language'));
+                document.querySelectorAll('header button:not(.nav-btn)').forEach(e => {
+                    if (!e.textContent.trim() && !e.getAttribute('aria-label'))
+                        e.setAttribute('aria-label', 'Background')
                 }
-                size();
-                if (rm) {
-                    t = 1.5;
-                    draw()
-                } else
-                    requestAnimationFrame(frame);
+                );
+                /* reveal on scroll + lazy images (also for cards rendered later) */
+                const io = 'IntersectionObserver' in window && !rm ? new IntersectionObserver(es => {
+                    let k = 0;
+                    es.forEach(e => {
+                        if (e.isIntersecting) {
+                            e.target.style.animationDelay = (k++ % 8) * .05 + 's';
+                            e.target.classList.add('in');
+                            io.unobserve(e.target)
+                        }
+                    }
+                    )
+                }
+                ,{
+                    threshold: .06,
+                    rootMargin: '0px 0px -30px'
+                }) : null;
+                let q = false;
+                const scan = () => {
+                    q = false;
+                    if (io)
+                        document.querySelectorAll('.crystal-card:not(.rv),.stat-card:not(.rv),.contact-card:not(.rv)').forEach(e => {
+                            e.classList.add('rv');
+                            io.observe(e)
+                        }
+                        );
+                    document.querySelectorAll('img:not([loading])').forEach(i => {
+                        if (!i.closest('header')) {
+                            i.loading = 'lazy';
+                            i.decoding = 'async'
+                        }
+                    }
+                    )
+                }
+                ;
+                new MutationObserver( () => {
+                    if (!q) {
+                        q = true;
+                        requestAnimationFrame(scan)
+                    }
+                }
+                ).observe(document.body, {
+                    childList: true,
+                    subtree: true
+                });
+                scan();
+            }
+            )();
+
+            /* ===== HERO BRAND CHIPS -> open that brand's products ===== */
+            (function() {
+                function go(spec) {
+                    const [page,brand] = spec.split(':');
+                    switchPage(page);
+                    let btn = null;
+                    if (page === 'equipments') {
+                        btn = document.querySelector('#page-equipments .brand-tab[data-brand="' + brand + '"]');
+                        if (btn)
+                            switchBrand(brand, btn)
+                    } else {
+                        btn = [...document.querySelectorAll('#ingredBrandSel .brand-tab')].find(b => (b.getAttribute('onclick') || '').includes("'" + brand + "'"));
+                        if (btn)
+                            switchIngredBrand(brand, btn)
+                    }
+                    setTimeout( () => {
+                        const t = btn || document.getElementById('page-' + page);
+                        if (t)
+                            t.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'center'
+                            })
+                    }
+                    , 160);
+                }
+                document.addEventListener('click', e => {
+                    const c = e.target.closest('[data-go]');
+                    if (c)
+                        go(c.dataset.go)
+                }
+                );
+                document.addEventListener('keydown', e => {
+                    if ((e.key === 'Enter' || e.key === ' ') && e.target.matches && e.target.matches('[data-go]')) {
+                        e.preventDefault();
+                        go(e.target.dataset.go)
+                    }
+                }
+                );
             }
             )();
         </script>
